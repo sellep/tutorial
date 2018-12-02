@@ -1,8 +1,9 @@
 #pragma once
 
+#include "list.h"
 #include <cstddef>
 
-template <class T> class linked_list
+template <class T> class linked_list : public list<T>
 {
     class ll_node
     {
