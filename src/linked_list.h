@@ -19,10 +19,10 @@ template <class T> class linked_list : public list<T>
     };
 
     ll_node *root = nullptr;
-    #ifdef TAIL
+#ifdef TAIL
     ll_node *tail = nullptr;
-    #endif
-    std::size_t count;
+#endif
+    std::size_t length = 0;
 
 public:
     void add(T val)
@@ -30,16 +30,16 @@ public:
         if (root == nullptr)
         {
             root = new ll_node(val);
-            #ifdef TAIL
+#ifdef TAIL
             tail = root;
-            #endif
+#endif
         }
         else
         {
-            #ifdef TAIL
+#ifdef TAIL
             tail->next = new ll_node(val);
             tail = tail->next;
-            #else
+#else
             ll_node *cur = root;
 
             while (cur->next != nullptr)
@@ -48,9 +48,9 @@ public:
             }
 
             cur->next = new ll_node(val);
-            #endif
+#endif
         }
 
-        count++;
+        length++;
     }
 };
